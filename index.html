@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <style>
+        div {
+            font-size: 14px;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        text {
+            color: red;
+        }
+    </style>
+
+    <body>
+        <div></div>
+        <text> 提示：CSS 必须要设置 word-wrap: break-word; word-break: break-all; 才行 </text>
+    </body>
+    <script src="./TextOmitted.js"></script>
+    <script>
+        let box = document.querySelector('div'),
+            textOmitted = new TextOmitted({
+                width: box.clientWidth,
+                lineClamp: 3,
+                text:
+                    'gfdikjhsadfkjsadgfkjdsahfkjsadhfkjsadhfkjsah的萨芬和高科技撒谎费德勒卡萨丁回复凯撒撒旦v反抗军撒谎v了解撒旦发吉萨度较高shdkjfskhdjsahfkjsdfsahdfkjsadfkjhsagdfjsadfhsaldfhsakgfdsakfjdskahgjfdsa开饭的时间和高科技的撒撒反对吉萨独立开发收到女郎撒范德萨来访接待室空间规划拉萨5415645621514654616541654216854165489651564956489564',
+            });
+        box.innerText = textOmitted.dispose();
+        window.onresize = function (e) {
+            textOmitted.width = box.clientWidth;
+            box.innerText = textOmitted.dispose();
+        };
+    </script>
+</html>
